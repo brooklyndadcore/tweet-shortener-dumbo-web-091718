@@ -25,7 +25,7 @@ end
 
 
 def bulk_tweet_shortener(array)
-  array.map {|twt| puts word_substituter(twt)}
+  return array.each {|twt| puts word_substituter(twt)}
 end
 
 def selective_tweet_shortener(tweet)
