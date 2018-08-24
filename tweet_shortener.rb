@@ -1,10 +1,4 @@
-def word_substituter(string)
-  edge_case = "I'm running out of example tweets 4 u guys, which is weird, because I'm a writer & this is just writing & I tweet all day. 4 real, u guys.4 real."
-
-  if string == edge_case
-    return string
-  end
-  
+def word_substituter(string)  
   words = {
     "hello" => 'hi',
     "to" => '2',
@@ -17,18 +11,20 @@ def word_substituter(string)
     "at" => "@", 
     "and" => "&"
   }
+
   tweet_arr = []
   arr = string.split(" ")
+
   arr.each do |word|
-    if words[word]   
-      tweet_arr << words[word]
+    low_word = word.downcase
+    if words[low_word]   
+      tweet_arr << words[low_word]
     else
       tweet_arr << word
     end
   end
   return tweet_arr.join(" ")
 end
-
 
 def bulk_tweet_shortener(array)
   return array.each {|twt| puts word_substituter(twt)}
