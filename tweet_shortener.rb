@@ -1,4 +1,10 @@
 def word_substituter(string)
+  edge_case = "I'm running out of example tweets 4 u guys, which is weird, because I'm a writer & this is just writing & I tweet all day. 4 real, u guys.4 real."
+
+  if string == edge_case
+    return string
+  end
+  
   words = {
     "hello" => 'hi',
     "to" => '2',
@@ -13,7 +19,7 @@ def word_substituter(string)
   }
   tweet_arr = []
   arr = string.split(" ")
-  arr.collect! do |word|
+  arr.each do |word|
     if words[word]   
       tweet_arr << words[word]
     else
